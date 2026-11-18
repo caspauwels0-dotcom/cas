@@ -1,0 +1,57 @@
+:root {
+  color-scheme: dark;
+  --nacht: #07172e;
+  --paneel: rgba(15, 34, 60, .88);
+  --goud: #ffd34e;
+  --wit: #f7fbff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; color: var(--wit);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(ellipse at 50% -10%, #20578a, var(--nacht) 58%, #030915 100%);
+}
+button { font: inherit; }
+#spel { width: min(1200px, 100%); margin: 0 auto; padding: 24px; }
+.balk { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:16px; }
+.label { color:var(--goud); font-size:12px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+h1 { margin:5px 0 0; font-size:clamp(26px,4vw,46px); letter-spacing:-.035em; }
+.status { min-width:125px; padding:10px 16px; border:1px solid #ffffff25; border-radius:14px; background:#ffffff0d; text-align:right; }
+.status span { display:block; font-size:12px; opacity:.72; }
+.status strong { color:var(--goud); font-size:25px; font-variant-numeric:tabular-nums; }
+#stadion { position:relative; height:clamp(350px,52vw,570px); overflow:hidden; border:1px solid #ffffff20; border-radius:22px; background:#86bddc; box-shadow:0 28px 80px #0007; }
+#stadion canvas { display:block; width:100%; height:100%; outline:none; }
+#laden { position:absolute; z-index:2; inset:0; display:grid; place-items:center; background:#091a31; color:#fff; }
+#laden.verbergen { display:none; }
+.hud { position:absolute; z-index:1; top:16px; left:16px; display:flex; gap:9px; pointer-events:none; }
+.hud span { padding:9px 13px; border:1px solid #ffffff30; border-radius:11px; background:#07172ec9; font-weight:800; font-variant-numeric:tabular-nums; backdrop-filter:blur(8px); }
+#klok { color:var(--goud); }
+.hint { position:absolute; right:14px; bottom:14px; padding:9px 12px; border-radius:9px; background:#07172ec9; color:#fff; font-size:11px; font-weight:800; letter-spacing:.1em; pointer-events:none; }
+.bediening { display:grid; grid-template-columns:1fr 330px; gap:14px; margin-top:14px; }
+.paneel { border:1px solid #ffffff1d; border-radius:16px; background:var(--paneel); }
+.spelpaneel { display:flex; align-items:center; justify-content:space-between; gap:18px; padding:16px 20px; }
+#bericht { margin:0; font-size:18px; font-weight:750; }
+.uitleg { margin:6px 0 0; color:#b8c8db; font-size:13px; }
+.knoppen { display:flex; gap:9px; flex-shrink:0; }
+button { padding:11px 18px; border:0; border-radius:10px; background:var(--goud); color:#10213a; font-weight:900; cursor:pointer; transition:transform .15s, filter .15s; }
+button:hover { transform:translateY(-2px); filter:brightness(1.08); }
+button:focus-visible { outline:3px solid white; outline-offset:3px; }
+button:disabled { cursor:wait; opacity:.7; }
+button.secundair { background:#e9f1fb; }
+.klas { padding:13px 16px; }
+.klas h2 { margin:0 0 9px; font-size:15px; }
+.klas ol { display:grid; grid-template-columns:repeat(3,1fr); gap:7px; margin:0; padding:0; list-style:none; }
+.klas li { display:flex; align-items:center; gap:6px; padding:9px 7px; border-radius:9px; background:#0003; font-size:12px; }
+.klas li strong { margin-left:auto; }
+.medaille { width:12px; height:12px; border-radius:50%; }
+.goud { background:#ffd34e; }.zilver { background:#d5dde4; }.brons { background:#be7e45; }
+footer { padding:14px 2px 0; color:#b8c8db; font-size:12px; text-align:center; }
+@media (max-width:760px) {
+  #spel { padding:14px; }
+  #stadion { height: min(64vh, 470px); min-height:350px; }
+  .bediening { grid-template-columns:1fr; }
+  .spelpaneel { align-items:flex-start; flex-direction:column; }
+  .knoppen { width:100%; }
+  .knoppen button { flex:1; }
+}
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior:auto !important; transition:none !important; } }
