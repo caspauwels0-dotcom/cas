@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olympisch 3D Avontuur</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="spel">
+    <header class="balk">
+      <div>
+        <span class="label">Olympisch spel</span>
+        <h1>Olympisch 3D Avontuur</h1>
+      </div>
+      <div class="status">
+        <span>Afstand</span>
+        <strong id="afstand">0 m</strong>
+      </div>
+    </header>
+
+    <section id="stadion" aria-label="3D olympisch stadion">
+      <div id="lucht">
+        <div class="zon"></div>
+      </div>
+      <div class="tribune tribune-links"></div>
+      <div class="tribune tribune-rechts"></div>
+      <div id="baan">
+        <div class="lijn lijn-1"></div>
+        <div class="lijn lijn-2"></div>
+        <div class="lijn lijn-3"></div>
+        <div class="finish"></div>
+      </div>
+      <div id="hardloper" aria-label="Speelbare hardloper">
+        <div class="hoofd"></div>
+        <div class="lichaam"></div>
+        <div class="arm arm-links"></div>
+        <div class="arm arm-rechts"></div>
+        <div class="been been-links"></div>
+        <div class="been been-rechts"></div>
+      </div>
+    </section>
+
+    <section class="bediening">
+      <div>
+        <p id="bericht">Druk op start om te lopen.</p>
+        <div class="knoppen">
+          <button id="start" type="button">Start</button>
+          <button id="reset" type="button">Opnieuw</button>
+        </div>
+      </div>
+      <div class="klas">
+        <h2>Medailleklassement</h2>
+        <ol>
+          <li><span class="medaille goud"></span><span>Goud</span><strong id="goud">0</strong></li>
+          <li><span class="medaille zilver"></span><span>Zilver</span><strong id="zilver">0</strong></li>
+          <li><span class="medaille brons"></span><span>Brons</span><strong id="brons">0</strong></li>
+        </ol>
+      </div>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
